@@ -1,0 +1,30 @@
+﻿@using MVC1_BookWorld.Models
+@model List<Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<table class="table table-bordered table-hover">
+    <tr><td><h3>Books</h3></td>
+    <td><h3>Genre</h3></td> 
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Details",  new {id = item.ID})
+            </td>
+            <td>
+                @item.Genre
+            </td>
+        </tr>
+    }
+
+</table>
+
