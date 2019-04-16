@@ -1,39 +1,42 @@
 ﻿@using MVC1_BookWorld.Models
 @model List<Customer>
 
-   @{ ViewBag.Title = "Index";
+@{ ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @*@foreach (var item in Model){
-@item.Name
-}*@
-
+    @item.Name
+    }*@
 <h1>Customers</h1>
+
+
+<input type="button" class="btn btn-primary" value="New Customer" onclick="location.href='@Url.Action("New","Customers")'" />
 
 <table class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>
-            <h3>Customers</h3>
-        </th>
-        <th>Discount Rate</th>
-    </tr>
-    
-        </thead>
+        <tr>
+            <th>
+                <h3>Customers</h3>
+            </th>
+            <th>Discount Rate</th>
+        </tr>
+
+    </thead>
     <tbody>
-        @foreach (var item in Model) {        
+        @foreach (var item in Model)
+        {
 
             <tr>
                 <td>
                     @*@Html.ActionLink(item.Name, "Details", new {id = item.ID})*@
-                    @Html.ActionLink(item.Name, "Edit", new {id = item.ID})         @*goes to edit page*@ 
+                    @Html.ActionLink(item.Name, "Edit", new { id = item.ID })         @*goes to edit page*@
                 </td>
                 <td>@item.MembershipType.Name</td>
-             </tr>
+            </tr>
         }
-        </tbody>
-    
+    </tbody>
+
 </table>
 
 

@@ -7,13 +7,13 @@ namespace MVC1_BookWorld.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddedTables : IMigrationMetadata
+    public sealed partial class populatemembershiptypes : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(populatemembershiptypes));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903042230178_AddedTables"; }
+            get { return "201904121720021_populate membership types"; }
         }
         
         string IMigrationMetadata.Source

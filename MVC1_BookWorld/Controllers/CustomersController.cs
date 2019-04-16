@@ -35,15 +35,15 @@ namespace MVC1_BookWorld.Controllers
         }
 
         [HttpPost]     //mvc framework automatically maps request data with model..This is Model Binding
-        public ActionResult Save(Customer customer)   //changed New to Save
+        public ActionResult Save(Customer customer)   //changed New>>Update 
         {     //UpdateCustomerDto instead of Customer type as arg enables only selective prop ..security issues
-             if (customer.ID == 0)
+             if (customer.ID == 0)            //need id, demand from view
               _context.Customers.Add(customer);
              else
             {
                 var customerInDb = _context.Customers.Single(c => c.ID == customer.ID);   
                 //single used instead of single or default..throws exception when the customer is not found and we handle exception
-                //  TryUpdateModel(customerInDb);     //security holes, updates all//also can send string of properties to change but magic string
+                //  TryUpdateModel(customerInDb);     //security holes, **updates all//also can send string of properties to change but magic string
                 customerInDb.Name = customer.Name;
                 customerInDb.BirthDate = customer.BirthDate;
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
@@ -78,7 +78,7 @@ namespace MVC1_BookWorld.Controllers
             //   new Customer{ Name ="Louis "},
             //   new Customer{ Name="Subash"}
             //};
-            //  var customer = GetCustomers().ToList();             //Eagerloading--using table of Obj Datatype       //?!!!!! why used context.Customers     =>coz Dbset variable
+            //  var customer = GetCustomers().ToList();       //Eagerloading--using table of Obj Datatype       //?!!!!! why used context.Customers     =>coz Dbset variable
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();             //this is not querying DB    only after tolist
 
             return View(customers);
@@ -87,14 +87,16 @@ namespace MVC1_BookWorld.Controllers
        // [Route("Customers/Details/(id==UrlParameter.Optional)")]
         public ActionResult Details(int id) {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.ID == id);
+         //   var customer = _context.Customers.SingleOrDefault(c => c.ID == id);//object reference not set to an instance of an object
+
             if (customer == null)
                 return HttpNotFound();
 
             return View(customer);
         }
 
-        public ActionResult Edit(int id) {
-            var customer = _context.Customers.SingleOrDefault(c => c.ID == id);
+        public ActionResult Edit(int id) {              //displays editing form
+            var customer = _context.Customers.SingleOrDefault(c => c.ID == id); //~~~~~!!!!
 
             if (customer == null) 
                 return HttpNotFound();

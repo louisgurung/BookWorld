@@ -3,18 +3,58 @@ namespace MVC1_BookWorld.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialModel : DbMigration
+    public partial class initla : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Books",
+                c => new
+                    {
+                        ID = c.Byte(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        GenreId = c.Byte(nullable: false),
+                        DateAdded = c.String(),
+                        NumberInStock = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Genres", t => t.GenreId, cascadeDelete: true)   //why Genres generated?
+                .Index(t => t.GenreId);
+            
+            CreateTable(
+                "dbo.Genres",
+                c => new
+                    {
+                        Id = c.Byte(nullable: false),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.Customers",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false, maxLength: 255),
+                        IsSubscribedToNewsLetter = c.Boolean(nullable: false),
+                        BirthDate = c.String(),
+                        MembershipTypeId = c.Byte(nullable: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.MembershipTypes", t => t.MembershipTypeId, cascadeDelete: true)
+                .Index(t => t.MembershipTypeId);
+            
+            CreateTable(
+                "dbo.MembershipTypes",
+                c => new
+                    {
+                        Id = c.Byte(nullable: false),
+                        Name = c.String(),
+                        SignUpFee = c.Short(nullable: false),
+                        DurationInMonths = c.Byte(nullable: false),
+                        DiscountRate = c.Byte(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -92,18 +132,25 @@ namespace MVC1_BookWorld.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Customers", "MembershipTypeId", "dbo.MembershipTypes");
+            DropForeignKey("dbo.Books", "GenreId", "dbo.Genres");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Customers", new[] { "MembershipTypeId" });
+            DropIndex("dbo.Books", new[] { "GenreId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.MembershipTypes");
             DropTable("dbo.Customers");
+            DropTable("dbo.Genres");
+            DropTable("dbo.Books");
         }
     }
 }

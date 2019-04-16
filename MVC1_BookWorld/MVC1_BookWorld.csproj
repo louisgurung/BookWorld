@@ -205,53 +205,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903042220280_InitialModel.cs" />
-    <Compile Include="Migrations\201903042220280_InitialModel.Designer.cs">
-      <DependentUpon>201903042220280_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201904121712561_initla.cs" />
+    <Compile Include="Migrations\201904121712561_initla.Designer.cs">
+      <DependentUpon>201904121712561_initla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903042230178_AddedTables.cs" />
-    <Compile Include="Migrations\201903042230178_AddedTables.Designer.cs">
-      <DependentUpon>201903042230178_AddedTables.cs</DependentUpon>
+    <Compile Include="Migrations\201904121720021_populate membership types.cs" />
+    <Compile Include="Migrations\201904121720021_populate membership types.Designer.cs">
+      <DependentUpon>201904121720021_populate membership types.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903042236457_AddIsSubscribedToNewsLet.cs" />
-    <Compile Include="Migrations\201903042236457_AddIsSubscribedToNewsLet.Designer.cs">
-      <DependentUpon>201903042236457_AddIsSubscribedToNewsLet.cs</DependentUpon>
+    <Compile Include="Migrations\201904121751589_add genres name.cs" />
+    <Compile Include="Migrations\201904121751589_add genres name.Designer.cs">
+      <DependentUpon>201904121751589_add genres name.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903042242218_AddMembershipType.cs" />
-    <Compile Include="Migrations\201903042242218_AddMembershipType.Designer.cs">
-      <DependentUpon>201903042242218_AddMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903042258003_AppliedAnnotationToCustomerName.cs" />
-    <Compile Include="Migrations\201903042258003_AppliedAnnotationToCustomerName.Designer.cs">
-      <DependentUpon>201903042258003_AppliedAnnotationToCustomerName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903081855396_Added name of membershiptype.cs" />
-    <Compile Include="Migrations\201903081855396_Added name of membershiptype.Designer.cs">
-      <DependentUpon>201903081855396_Added name of membershiptype.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903081902190_added birthdate property to Customer.cs" />
-    <Compile Include="Migrations\201903081902190_added birthdate property to Customer.Designer.cs">
-      <DependentUpon>201903081902190_added birthdate property to Customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903082010133_Added Genre to Book Model.cs" />
-    <Compile Include="Migrations\201903082010133_Added Genre to Book Model.Designer.cs">
-      <DependentUpon>201903082010133_Added Genre to Book Model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903082020009_added genre, date added, number in stock.cs" />
-    <Compile Include="Migrations\201903082020009_added genre, date added, number in stock.Designer.cs">
-      <DependentUpon>201903082020009_added genre, date added, number in stock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903082023257_Date datatype set to string.cs" />
-    <Compile Include="Migrations\201903082023257_Date datatype set to string.Designer.cs">
-      <DependentUpon>201903082023257_Date datatype set to string.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903190531200_AddedGenre.cs" />
-    <Compile Include="Migrations\201903190531200_AddedGenre.Designer.cs">
-      <DependentUpon>201903190531200_AddedGenre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903191519437_Add Memebership Names.cs" />
-    <Compile Include="Migrations\201903191519437_Add Memebership Names.Designer.cs">
-      <DependentUpon>201903191519437_Add Memebership Names.cs</DependentUpon>
+    <Compile Include="Migrations\201904160247547_change id type in book.cs" />
+    <Compile Include="Migrations\201904160247547_change id type in book.Designer.cs">
+      <DependentUpon>201904160247547_change id type in book.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <!-- comment 
@@ -270,6 +238,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModel\NewBookViewModel.cs" />
     <Compile Include="ViewModel\RandomBookViewModel.cs" />
     <Compile Include="ViewModel\TestModel.cs" />
   </ItemGroup>
@@ -342,6 +311,7 @@
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Books\NewBookForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,41 +330,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903042220280_InitialModel.resx">
-      <DependentUpon>201903042220280_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904121712561_initla.resx">
+      <DependentUpon>201904121712561_initla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903042230178_AddedTables.resx">
-      <DependentUpon>201903042230178_AddedTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904121720021_populate membership types.resx">
+      <DependentUpon>201904121720021_populate membership types.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903042236457_AddIsSubscribedToNewsLet.resx">
-      <DependentUpon>201903042236457_AddIsSubscribedToNewsLet.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904121751589_add genres name.resx">
+      <DependentUpon>201904121751589_add genres name.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903042242218_AddMembershipType.resx">
-      <DependentUpon>201903042242218_AddMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903042258003_AppliedAnnotationToCustomerName.resx">
-      <DependentUpon>201903042258003_AppliedAnnotationToCustomerName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903081855396_Added name of membershiptype.resx">
-      <DependentUpon>201903081855396_Added name of membershiptype.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903081902190_added birthdate property to Customer.resx">
-      <DependentUpon>201903081902190_added birthdate property to Customer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903082010133_Added Genre to Book Model.resx">
-      <DependentUpon>201903082010133_Added Genre to Book Model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903082020009_added genre, date added, number in stock.resx">
-      <DependentUpon>201903082020009_added genre, date added, number in stock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903082023257_Date datatype set to string.resx">
-      <DependentUpon>201903082023257_Date datatype set to string.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903190531200_AddedGenre.resx">
-      <DependentUpon>201903190531200_AddedGenre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903191519437_Add Memebership Names.resx">
-      <DependentUpon>201903191519437_Add Memebership Names.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904160247547_change id type in book.resx">
+      <DependentUpon>201904160247547_change id type in book.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <!--<ItemGroup>

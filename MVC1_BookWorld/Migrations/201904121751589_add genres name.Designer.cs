@@ -7,13 +7,13 @@ namespace MVC1_BookWorld.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AppliedAnnotationToCustomerName : IMigrationMetadata
+    public sealed partial class addgenresname : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AppliedAnnotationToCustomerName));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addgenresname));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903042258003_AppliedAnnotationToCustomerName"; }
+            get { return "201904121751589_add genres name"; }
         }
         
         string IMigrationMetadata.Source

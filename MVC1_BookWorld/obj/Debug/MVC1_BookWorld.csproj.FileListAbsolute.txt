@@ -120,6 +120,13 @@ C:\Users\User\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC
 C:\Users\User\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csproj.CopyComplete
 C:\Users\User\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.dll
 C:\Users\User\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.pdb
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\VBCSCompiler.exe
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\ApplicationInsights.config
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\MVC1_BookWorld.dll.config
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\MVC1_BookWorld.dll
@@ -131,18 +138,13 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\r
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\csi.exe.config
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\csi.rsp
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\Microsoft.Win32.Primitives.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.AppContext.dll
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Console.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Diagnostics.Process.dll
@@ -152,7 +154,6 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\r
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.IO.Pipes.dll
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Security.AccessControl.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Security.Claims.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\System.Security.Cryptography.Algorithms.dll
@@ -170,7 +171,6 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\r
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\vbc.exe
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\vbc.exe.config
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\vbc.rsp
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\VBCSCompiler.exe
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Antlr3.Runtime.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\EntityFramework.dll
@@ -237,21 +237,13 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\M
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Microsoft.AI.Web.xml
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csprojAssemblyReference.cache
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.initla.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.populatemembershiptypes.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addgenresname.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csproj.GenerateResource.cache
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csproj.CoreCompileInputs.cache
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csproj.CopyComplete
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.pdb
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.InitialModel.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csproj.GenerateResource.cache
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AddedTables.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AddIsSubscribedToNewsLet.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AddMembershipType.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AppliedAnnotationToCustomerName.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csprojAssemblyReference.cache
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.Addednameofmembershiptype.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedbirthdatepropertytoCustomer.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AddedGenretoBookModel.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedgenredateaddednumberinstock.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.Datedatatypesettostring.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AddedGenre.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AddMemebershipNames.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.changeidtypeinbook.resources

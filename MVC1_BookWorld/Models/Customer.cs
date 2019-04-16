@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
     public class Customer
-    {
+    {   [Key]
         public int ID { get; set; }
 
         [Required]             //makes name non nullable..using dataannotations...override
