@@ -11,12 +11,13 @@ namespace MVC1_BookWorld.Models
     {   [Key]
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter the books name!")]
         [StringLength(255)]
         public string Name { get; set; }
 
         public Genre Genre { get; set; }
 
+        //byte? --optional     byte--implicitly required
         [Display(Name="GeNre")]
         public byte GenreId { get; set; }
 
@@ -24,7 +25,19 @@ namespace MVC1_BookWorld.Models
         public string DateAdded { get; set; }
 
         [Display(Name="Number Available")]
+        [NoOfBooksRange]
+        [Range(1,20)]
         public int NumberInStock { get; set; }
         //movies/random
     }
 }
+
+
+
+//Data annotation  
+//[Range(1,10)]
+//[Compare("Other Property")]
+//[Phone]
+//[EmailAddress]
+//[Url]
+//[RegularExpression("...")]

@@ -14,11 +14,13 @@ using System.Web;
         public string Name { get; set; }
         public bool IsSubscribedToNewsLetter { get; set; }
 
+        [Min18YearsIfMember]      //implement validation for this
         [Display(Name ="Date of Birth")]     //changing the display name from model's name (Data annotation)
-        public string BirthDate { get; set; }
+        public String BirthDate { get; set; }
 
         public MembershipType MembershipType { get; set; }
 
+        [Required]
         [Display(Name="Membership Type")]
         public byte MembershipTypeId { get; set; }
     }

@@ -11,6 +11,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Book.Name)
         @Html.TextBoxFor(m => m.Book.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Book.Name)
     </div>
 
     <div class="form-group">
@@ -24,14 +25,21 @@
 
         @Html.LabelFor(m => m.Book.Genre)
         @Html.DropDownListFor(m => m.Book.GenreId, new SelectList(Model.Genre, "Id", "Name"), "Select Genre", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Book.GenreId)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Book.NumberInStock)
         @Html.TextBoxFor(m => m.Book.NumberInStock, new { @class = "form-control" })
-    </div>
+    @Html.ValidationMessageFor(m=>m.Book.NumberInStock)
+        </div>
     @Html.HiddenFor(m=>m.Book.ID)
+    @Html.AntiForgeryToken() //server side validation ...if doesnot match stop requests
 
     <button type ="submit" class="btn btn-primary">Save</button>
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
 

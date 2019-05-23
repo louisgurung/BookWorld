@@ -10,18 +10,14 @@
 
 @using (Html.BeginForm("Save", "Customers"))
 {
+    @Html.ValidationSummary(true, "Please fix the following error")
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
 
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Customer.BirthDate)          @*//label for focuses on box when cursor moves around*@
-        @*<label for="Birthdate">Date of Birth</label> //while using this approach manually change changes*@
 
-        @Html.TextBoxFor(m => m.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
-        @*!?the middle format*@
-    </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.MembershipTypeId)          @*//label for focuses on box when cursor moves around*@
@@ -29,6 +25,16 @@
 
         @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
         @*id, name has imp roles..cant display types without*@
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.BirthDate)          @*//label for focuses on box when cursor moves around*@
+        @*<label for="Birthdate">Date of Birth</label> //while using this approach manually change changes*@
+
+        @Html.TextBoxFor(m => m.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.BirthDate)
+        @*!?the middle format*@
     </div>
     <div class="checkbox">
         <label>
@@ -36,7 +42,13 @@
 
         </label>
     </div>
-       @Html.HiddenFor(m=> m.Customer.ID)        //??Hidden for not working-->Id case sensitive
+    @Html.HiddenFor(m => m.Customer.ID) //??Hidden for not working-->Id case sensitive
     <button type="submit" class="btn btn-primary">Save</button>
-
+    @Html.AntiForgeryToken()
 }
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")           @*validation on client side...due to this only for standard type if not specified..client side-->data annotation*@
+}
+
+@*ctrl+f5*@

@@ -29,15 +29,33 @@ namespace MVC1_BookWorld.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();      //created table of membership 
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),   //???!!!!!!!!!!!..use?
                 MembershipTypes = membershipTypes
         };                                                          //sending viewModel as an object to store value of new customer
             return View("CustomerForm",viewModel);   //we r sending customerform because the view name is diff~~
         }
 
         [HttpPost]     //mvc framework automatically maps request data with model..This is Model Binding
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)   //changed New>>Update 
+            //validation is checked here coz customer type is the argument 
+
         {     //UpdateCustomerDto instead of Customer type as arg enables only selective prop ..security issues
-             if (customer.ID == 0)            //need id, demand from view
+
+            if (!ModelState.IsValid)
+            {
+
+                var viewModel = new CustomerFormViewModel()
+                {
+                    Customer = customer,
+
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
+            if (customer.ID == 0)            //need id, demand from view
               _context.Customers.Add(customer);
              else
             {

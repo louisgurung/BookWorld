@@ -8,6 +8,7 @@ using MVC1_BookWorld.Models;
 using MVC1_BookWorld.ViewModel;
 using System.Data.Entity;
 using System.Web.UI.WebControls;
+using System.Data.Entity.Validation;
 
 namespace MVC1_BookWorld.Controllers
 {
@@ -107,8 +108,21 @@ namespace MVC1_BookWorld.Controllers
         }
 
         [HttpPost] //this is to save the form
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Book book) //save and update 
         {
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewBookViewModel()
+                {
+                    Book = book,
+                    Genre = _context.Genre.ToList()
+                };
+
+                return View("NewBookForm",viewModel);
+            }
+
             if (book.ID == 0)
             {
                 _context.Books.Add(book);
@@ -124,11 +138,19 @@ namespace MVC1_BookWorld.Controllers
                 BookInDb.NumberInStock = book.NumberInStock;
             }
 
-            _context.SaveChanges();
+            //try
+            //{         //required entity can be set here too for no exception to occur
+                _context.SaveChanges();
+            //}
+            //catch (DbEntityValidationException e)
+            //{
+            //    Console.WriteLine(e);           //break point f9
+            //}
 
             return RedirectToAction("Index", "Books");
 
-        }
+        } 
+        //f5 debugger ..shift+f5 -->stop debugger
 
         public ActionResult Edit(int id) //this displays edit form
         {
