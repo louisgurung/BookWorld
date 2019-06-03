@@ -97,9 +97,11 @@ namespace MVC1_BookWorld.Controllers
             //   new Customer{ Name="Subash"}
             //};
             //  var customer = GetCustomers().ToList();       //Eagerloading--using table of Obj Datatype       //?!!!!! why used context.Customers     =>coz Dbset variable
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();             //this is not querying DB    only after tolist
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList();             //this is not querying DB    only after tolist
 
-            return View(customers);
+            //return View(customers);
+
+            return View();
         }
 
        // [Route("Customers/Details/(id==UrlParameter.Optional)")]

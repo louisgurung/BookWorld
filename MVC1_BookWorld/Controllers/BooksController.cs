@@ -85,6 +85,7 @@ namespace MVC1_BookWorld.Controllers
 
             var viewModel = new NewBookViewModel()
             {
+                Book = new Book(), //without this new book doesnot form from controller
                 Genre = genre
 
             };
