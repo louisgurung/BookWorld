@@ -12,7 +12,7 @@ namespace MVC1_BookWorld.Controllers
 {
     public class CustomersController : Controller       
     {
-        // GET: Customers
+        // GET: Customers        if authorize placed here ..works for all methods...if kept globally works for all controller
         private ApplicationDbContext _context;
         public CustomersController()          //ctor+tab 
         {
@@ -24,14 +24,14 @@ namespace MVC1_BookWorld.Controllers
             base.Dispose(disposing);
         }
 
-
+        [Authorize(Roles=RoleNames.CanManageCustomers)]
         public ActionResult New() {      //this is for disposable form, to create new customer
             var membershipTypes = _context.MembershipTypes.ToList();      //created table of membership 
             var viewModel = new CustomerFormViewModel
             {
                 Customer = new Customer(),   //???!!!!!!!!!!!..use?
                 MembershipTypes = membershipTypes
-        };                                                          //sending viewModel as an object to store value of new customer
+            };                                                          //sending viewModel as an object to store value of new customer
             return View("CustomerForm",viewModel);   //we r sending customerform because the view name is diff~~
         }
 
@@ -88,7 +88,7 @@ namespace MVC1_BookWorld.Controllers
             return RedirectToAction("Index","Customers");
         }
 
-    
+        [Authorize]    //doesnt allow access if not logged in
         public ActionResult Index()
         {
             //var customer = new List<Customer>
@@ -101,7 +101,10 @@ namespace MVC1_BookWorld.Controllers
 
             //return View(customers);
 
-            return View();
+            if (User.IsInRole(RoleNames.CanManageCustomers))
+                return View("AdminList");
+
+            return View("ReadOnlyList");
         }
 
        // [Route("Customers/Details/(id==UrlParameter.Optional)")]

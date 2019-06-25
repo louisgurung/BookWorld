@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mime;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MVC1_BookWorld.Models;
@@ -76,6 +78,7 @@ namespace MVC1_BookWorld.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            //password sign in async logs u in after u register
             switch (result)
             {
                 case SignInStatus.Success:
@@ -151,17 +154,34 @@ namespace MVC1_BookWorld.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                    { UserName = model.Email,
+                        Email = model.Email,
+                        DrivingLicense = model.DrivingLicense,
+                        PhoneNumber =  model.PhoneNumber
+                      
+                    };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Temp code
+
+                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());                //await to async
+                    //var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    //await roleManager.CreateAsync(new IdentityRole("CanManageCustomers"));
+                    
+                    //await UserManager.AddToRoleAsync(user.Id, "CanManageCustomers");
+
+                    //these codes to add admin
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);............sends email to confirm
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    //above four lines ..makes accounts manage books
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -367,7 +387,13 @@ namespace MVC1_BookWorld.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    DrivingLicense = model.DrivingLicense,
+                    PhoneNumber = model.PhoneNumber
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

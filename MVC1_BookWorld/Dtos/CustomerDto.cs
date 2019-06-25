@@ -9,19 +9,21 @@ namespace MVC1_BookWorld.Dtos
 {
     public class CustomerDto
     {
+        
         public int ID { get; set; }
-
-        [Required] //makes name non nullable..using dataannotations...override
-        [StringLength(255)]
         public string Name { get; set; }
-
         public bool IsSubscribedToNewsLetter { get; set; }
 
+        //implement validation for this
+        [Display(Name = "Date of Birth")]     //changing the display name from model's name (Data annotation)
+        public String BirthDate { get; set; }
+
+        public MembershipTypeDto MembershipType { get; set; }
+
+      
         public byte MembershipTypeId { get; set; }
 
 
-        //[Min18YearsIfMember] 
-        public String BirthDate { get; set; }
 
 
     }

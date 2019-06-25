@@ -35,10 +35,12 @@ namespace MVC1_BookWorld.Controllers
             //    new Book{ ID= 2, Name = "Palpasa Cafe"}
             //};
 
-            var books = _context.Books.Include(c => c.Genre).ToList();
+           // var books = _context.Books.Include(c => c.Genre).ToList();
 
-
-            return View(books);
+           if (User.IsInRole(RoleNames.CanManageBooks))
+               return View("AdminList");
+          
+            return View("ReadOnlyList");
 
         }
 
@@ -78,6 +80,7 @@ namespace MVC1_BookWorld.Controllers
 
         }
 
+        [Authorize(Roles = RoleNames.CanManageBooks)]
         public ActionResult New()
         {
             //this is a disposable form

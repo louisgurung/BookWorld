@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44323</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -220,6 +220,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Dtos\BookDto.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\GenreDto.cs" />
+    <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,9 +241,21 @@
     <Compile Include="Migrations\201904160247547_change id type in book.Designer.cs">
       <DependentUpon>201904160247547_change id type in book.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904170318300_changed datatype of birthdate.cs" />
-    <Compile Include="Migrations\201904170318300_changed datatype of birthdate.Designer.cs">
-      <DependentUpon>201904170318300_changed datatype of birthdate.cs</DependentUpon>
+    <Compile Include="Migrations\201906230549261_AddedDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\201906230549261_AddedDrivingLicenseToApplicationUser.Designer.cs">
+      <DependentUpon>201906230549261_AddedDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906230553328_test.cs" />
+    <Compile Include="Migrations\201906230553328_test.Designer.cs">
+      <DependentUpon>201906230553328_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906241547557_seeding_CanManageBooks_Admin_CanManageCustomers_AdminAndStaff.cs" />
+    <Compile Include="Migrations\201906241547557_seeding_CanManageBooks_Admin_CanManageCustomers_AdminAndStaff.Designer.cs">
+      <DependentUpon>201906241547557_seeding_CanManageBooks_Admin_CanManageCustomers_AdminAndStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906241951467_addedPhoneNumber.cs" />
+    <Compile Include="Migrations\201906241951467_addedPhoneNumber.Designer.cs">
+      <DependentUpon>201906241951467_addedPhoneNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <!-- comment 
@@ -259,6 +273,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\NoOfBooksRange.cs" />
+    <Compile Include="Models\RoleNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\CustomerFormViewModel.cs" />
@@ -505,12 +520,14 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Books\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\AdminList.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Books\AdminList.cshtml" />
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Books\NewBookForm.cshtml" />
+    <Content Include="Views\Books\ReadOnlyList.cshtml" />
+    <Content Include="Views\Customers\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -541,8 +558,17 @@
     <EmbeddedResource Include="Migrations\201904160247547_change id type in book.resx">
       <DependentUpon>201904160247547_change id type in book.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904170318300_changed datatype of birthdate.resx">
-      <DependentUpon>201904170318300_changed datatype of birthdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906230549261_AddedDrivingLicenseToApplicationUser.resx">
+      <DependentUpon>201906230549261_AddedDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906230553328_test.resx">
+      <DependentUpon>201906230553328_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906241547557_seeding_CanManageBooks_Admin_CanManageCustomers_AdminAndStaff.resx">
+      <DependentUpon>201906241547557_seeding_CanManageBooks_Admin_CanManageCustomers_AdminAndStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906241951467_addedPhoneNumber.resx">
+      <DependentUpon>201906241951467_addedPhoneNumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <!--<ItemGroup>
@@ -568,7 +594,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59007</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59007/</IISUrl>
+          <IISUrl>https://localhost:44323/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

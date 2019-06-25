@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using MVC1_BookWorld.Models;
 
 namespace MVC1_BookWorld.Dtos
 {
@@ -10,11 +11,11 @@ namespace MVC1_BookWorld.Dtos
     {
         public int ID { get; set; }
 
-        [Required(ErrorMessage = "Please enter the books name!")]
+       
         [StringLength(255)]
         public string Name { get; set; }
 
-        //public Genre Genre { get; set; }
+        public GenreDto Genre { get; set; }
 
         //byte? --optional     byte--implicitly required
         //[Display(Name = "GeNre")]

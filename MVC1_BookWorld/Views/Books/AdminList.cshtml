@@ -1,0 +1,111 @@
+﻿@using MVC1_BookWorld.Models
+@model List<Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<input type="button" class="btn btn-primary" value="New Book" onclick="location.href = '@Url.Action("New","Books")'"/>
+
+<table id="books" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+
+        <th>
+            <h3>Books</h3>
+        </th>
+
+        <th>
+           Genre
+        </th>
+        
+        <th>Delete</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @*@foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+               Html.ActionLink(item.Name, "Details",  new {id = item.ID})
+               @Html.ActionLink(item.Name, "Edit", new { id = item.ID })         @*goes to edit page
+       
+             </td>
+            <td>
+                @item.Genre.Name
+            </td>
+        </tr>
+    }*@
+    </tbody>
+</table>
+
+@section scripts{
+    <script>
+
+        $(document).ready(function() {
+            var table = $("#books").DataTable({
+                ajax: {
+                    url: "/api/books",
+                    dataSrc: ""
+                },
+                columns:
+                [
+                    {
+                        data: "name",
+                        render: function(data, type, book) {
+                            return "<a href ='/books/edit/" + book.id + "'>" + book.name + "</a>";
+
+                        }
+                    },
+                    {
+                        data: "genre.name"
+                    },
+                    {
+                        data: "id",
+                        render: function(data) {
+                            return "<button class = 'btn-link js-delete' data-book-id=" + data + ">Delete</button";
+                        }
+                    }
+                ]
+
+            })
+
+        });
+
+        $("#books").on("click",
+            ".js-delete",
+            function () { //no matter how many deletes all...filter
+
+                var button = $(this);
+
+                bootbox.confirm(
+                    "Are you sure you want to delete this book?", //this doesnt return a boolean but call back
+                    function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/api/books/" + /*$(this)*/button.attr("data-book-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    //table.row(button.parents("tr")).remove().draw();
+                                    window.location.href = "https://localhost:44323/Books";
+
+                                }
+                            });
+                        }
+                    });
+                //if (confirm("Are you sure you want to delete this customer?")) {
+
+                //}
+            });
+
+    
+
+       
+
+
+    </script>
+}

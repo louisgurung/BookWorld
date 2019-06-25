@@ -34,7 +34,7 @@ namespace MVC1_BookWorld.Models
            // var age = 20;
            //suppose type 3 membership is criteria for birthdate  if 3 then not valid
 
-            return (customer.MembershipTypeId != 3)   
+            return (customer.BirthDate is string)   
                 ? ValidationResult.Success 
                 : new ValidationResult("Customer should be atleast 18 years");
         }

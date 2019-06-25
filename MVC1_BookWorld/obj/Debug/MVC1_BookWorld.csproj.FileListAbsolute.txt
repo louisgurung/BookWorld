@@ -246,8 +246,6 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\D
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.pdb
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.changeidtypeinbook.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.changeddatatypeofbirthdate.resources
-C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csprojAssemblyReference.cache
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\System.Net.Http.Formatting.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\System.Web.Http.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\System.Web.Http.WebHost.dll
@@ -256,3 +254,8 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\S
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\System.Web.Http.WebHost.xml
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\AutoMapper.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\AutoMapper.xml
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.csprojAssemblyReference.cache
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.AddedDrivingLicenseToApplicationUser.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.test.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.seeding_CanManageBooks_Admin_CanManageCustomers_AdminAndStaff.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedPhoneNumber.resources

@@ -5,7 +5,7 @@ namespace MVC1_BookWorld.Migrations
     
     public partial class populatemembershiptypes : DbMigration
     {
-        public override void Up()
+        public override void Up() 
         {
             Sql("INSERT INTO MembershipTypes(Id,Name,SignUpFee,DurationInMonths,DiscountRate) VALUES(1,'Pay as you go',0,1,2)");
             Sql("INSERT INTO MembershipTypes(Id,Name,SignUpFee,DurationInMonths,DiscountRate) VALUES(2,'Weekly',3,4,5)");

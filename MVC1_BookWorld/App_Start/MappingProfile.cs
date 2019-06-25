@@ -12,10 +12,25 @@ namespace MVC1_BookWorld.App_Start
     {
         public MappingProfile()
         {
+            //Domain to Dto
             Mapper.CreateMap<Customer, CustomerDto>();      //generic method takes source and target
-            Mapper.CreateMap<CustomerDto, Customer>();
+
             Mapper.CreateMap<Book, BookDto>();
-            Mapper.CreateMap<BookDto, Book>();
+
+             Mapper.CreateMap<MembershipType,MembershipTypeDto>();
+
+             Mapper.CreateMap<Genre,GenreDto>();
+
+            //Dto to Domain
+            Mapper.CreateMap<CustomerDto, Customer>()
+                .ForMember(c => c.ID, opt => opt.Ignore());
+
+            Mapper.CreateMap<BookDto, Book>()
+                .ForMember(c => c.ID, opt => opt.Ignore());
+
+            Mapper.CreateMap<GenreDto, Genre>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
+
         }
     }
 }

@@ -50,13 +50,13 @@ namespace MVC1_BookWorld
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
+            // app.UseTwitterAuthentication(
             //   consumerKey: "",
-            //   consumerSecret: "");
+            // consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+            appId: "2023017781137481",
+           appSecret: "042785fa9354b5e354623975f0d102d3");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

@@ -7,13 +7,13 @@ namespace MVC1_BookWorld.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class changeddatatypeofbirthdate : IMigrationMetadata
+    public sealed partial class addedPhoneNumber : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changeddatatypeofbirthdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedPhoneNumber));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904170318300_changed datatype of birthdate"; }
+            get { return "201906241951467_addedPhoneNumber"; }
         }
         
         string IMigrationMetadata.Source

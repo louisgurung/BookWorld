@@ -7,6 +7,7 @@ using System.Web.Http;
 using MVC1_BookWorld.Models;
 using MVC1_BookWorld.Dtos;
 using AutoMapper;
+using System.Data.Entity;  //to use genre
 
 namespace MVC1_BookWorld.Controllers.api
 {
@@ -22,37 +23,54 @@ namespace MVC1_BookWorld.Controllers.api
 
         //GET/api/Books
 
-        public IEnumerable<BookDto> GetBooks()
+        public /*IEnumerable<BookDto>*/IHttpActionResult GetBooks()
+
         {
-            return _context.Books.ToList().Select(Mapper.Map<Book,BookDto>);
+
+           // var x = _context.Books.Include(b=> b.Genre).ToList();
+            // return _context.Books.ToList().Select(Mapper.Map<Book,BookDto>);
+           var bookDtos = _context.Books
+               .Include(c => c.Genre)
+               .ToList()
+               .Select(Mapper.Map<Book, BookDto>);
+
+           return Ok(bookDtos);
         }
 
         //get by id
-        public BookDto GetBook(int id)
+        public /*BookDto*/IHttpActionResult GetBook(int id)
         {
             
           var book = _context.Books.SingleOrDefault(c => c.ID == id);
 
           if (book==null)
           {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+              //  throw new HttpResponseException(HttpStatusCode.NotFound);
+              return NotFound();
           }
 
-          return Mapper.Map<Book, BookDto>(book);
+         // return Mapper.Map<Book, BookDto>(book);
+         return Ok(Mapper.Map<Book, BookDto>(book));
         }
 
         [HttpPost]
-        public BookDto CreateBook(BookDto bookDto)
+        public /*BookDto*/IHttpActionResult CreateBook(BookDto bookDto)
         {
-            if(!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            if (!ModelState.IsValid)
+                // throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
             var book = Mapper.Map<BookDto, Book>(bookDto);
 
             _context.Books.Add(book);
             _context.SaveChanges();
 
-            return bookDto;
+           // return bookDto;
+           bookDto.ID = book.ID;
+
+           return Created(new Uri(Request.RequestUri+"/"+ book.ID.ToString()),bookDto );
+
+
         }
 
         [HttpPut]

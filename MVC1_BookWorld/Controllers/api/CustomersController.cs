@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using AutoMapper;
+using System.Data.Entity;
 using AutoMapper.Mappers;
 using MVC1_BookWorld.Dtos;
 using MVC1_BookWorld.Models;
@@ -24,9 +25,14 @@ namespace MVC1_BookWorld.Controllers.api
         }
 
         //GET/api/Customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+            var customerDtos = _context.Customers
+                .Include(c=>c.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer,CustomerDto>);
+
+            return Ok(customerDtos);
         }
 
 

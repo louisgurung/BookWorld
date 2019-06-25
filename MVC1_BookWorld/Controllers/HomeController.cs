@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MVC1_BookWorld.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()

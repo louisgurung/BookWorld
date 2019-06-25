@@ -1,0 +1,78 @@
+﻿@using MVC1_BookWorld.Models
+@model List<Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Books</h1>
+<table id="books" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+
+            <th>
+                <h3>Books</h3>
+            </th>
+
+            <th>
+                Genre
+            </th>
+
+        
+        </tr>
+    </thead>
+
+    <tbody>
+        @*@foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                       Html.ActionLink(item.Name, "Details",  new {id = item.ID})
+                       @Html.ActionLink(item.Name, "Edit", new { id = item.ID })         @*goes to edit page
+
+                     </td>
+                    <td>
+                        @item.Genre.Name
+                    </td>
+                </tr>
+            }*@
+    </tbody>
+</table>
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            var table = $("#books").DataTable({
+                ajax: {
+                    url: "/api/books",
+                    dataSrc: ""
+                },
+                columns:
+                    [
+                        {
+                            data: "name",
+                            render: function (data, type, book) {
+                                return "<a href ='/books/details/" + book.id + "'>" + book.name + "</a>";
+
+                            }
+                        },
+                        {
+                            data: "genre.name"
+                        }
+                       
+                    ]
+
+            })
+
+        });
+
+
+
+
+
+
+    </script>
+}
