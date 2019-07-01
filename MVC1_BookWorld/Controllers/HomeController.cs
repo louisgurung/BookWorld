@@ -9,6 +9,9 @@ namespace MVC1_BookWorld.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
+        //[OutputCache(Duration = 5,Location= System.Web.UI.OutputCacheLocation.Server, VaryByParam="*")]       //Premature optimization dont do
+        [OutputCache(Duration = 0,VaryByParam = "*",NoStore = true)]       //Premature optimization dont do
+
         public ActionResult Index()
         {
             return View();

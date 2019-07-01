@@ -259,3 +259,8 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\D
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.test.resources
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.seeding_CanManageBooks_Admin_CanManageCustomers_AdminAndStaff.resources
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedPhoneNumber.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.AspNet.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.Core.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.Mvc5.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.Ado.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.EF6.dll

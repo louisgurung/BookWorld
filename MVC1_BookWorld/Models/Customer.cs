@@ -18,7 +18,7 @@ using System.Web;
         [Display(Name ="Date of Birth")]     //changing the display name from model's name (Data annotation)
         public String BirthDate { get; set; }
 
-        public MembershipType MembershipType { get; set; }
+        public virtual MembershipType MembershipType { get; set; }
 
         [Required]
         [Display(Name="Membership Type")]

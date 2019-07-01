@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MVC1_BookWorld.Models;
 using MVC1_BookWorld.ViewModel;
+using System.Runtime.Caching;     //only after performance profiling
+using System.Collections.Generic;
 
-
+//async improves scalability not performance..threads dont wait for response..mongo db
+//sql server is single instance and mongo, raven, azure
 namespace MVC1_BookWorld.Controllers
 {
     public class CustomersController : Controller       
@@ -101,10 +101,20 @@ namespace MVC1_BookWorld.Controllers
 
             //return View(customers);
 
-            if (User.IsInRole(RoleNames.CanManageCustomers))
-                return View("AdminList");
+             //var customers = _context.Customers.ToList();
+             //if (User.IsInRole(RoleNames.CanManageCustomers))
+             //  return View("AdminList");
+             //  return View("ReadOnlyList");
 
-            return View("ReadOnlyList");
+             if (MemoryCache.Default["Genres"] == null)
+             {
+                 MemoryCache.Default["Genres"] = _context.Genre.ToList();
+             }
+
+             var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+
+             return View();
+
         }
 
        // [Route("Customers/Details/(id==UrlParameter.Optional)")]
