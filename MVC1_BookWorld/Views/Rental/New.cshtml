@@ -1,0 +1,82 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Rental Form</h2>
+
+<form>
+    @*div.form-group>label+input[type='text'].form-control*@
+    <div class="form-group">
+        <label>Customer</label>
+        <input id ="customer" type="text" class="form-control" />
+    </div> 
+   
+    <div class="form-group">
+        <label>Book</label>
+        <input id ="book" type="text" class="form-control" />
+    </div>
+    
+    <button class="btn btn-primary">Submit</button>
+
+
+
+</form>
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            var vm = {};        //empty object to store the customer when selected
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                //prefetch: '../data/films/post_1960.json',
+                remote: {
+                    url: '/api/customers?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead(
+                {
+                    minLength: 2,
+                    highlight: true
+                },
+                {
+                    name: 'customers',
+                    display: 'name',
+                    source: customers
+                }).on("typeahead:select",
+                function(e, customer) {
+                    vm.customerId = customer.id;
+                });
+
+
+            var objStore = {};        //empty object to store the customer when selected
+            var books = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                //prefetch: '../data/films/post_1960.json',
+                remote: {
+                    url: '/api/books?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#book').typeahead(
+                {
+                    minLength: 1,
+                    highlight: true
+                },
+                {
+                    name: 'books',
+                    display: 'name',
+                    source: books
+                }).on("typeahead:select",
+                function(e, book) {
+                    objStore.Id = book.id;
+                });
+        
+        });
+    </script>
+}

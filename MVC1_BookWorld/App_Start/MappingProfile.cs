@@ -21,6 +21,8 @@ namespace MVC1_BookWorld.App_Start
 
              Mapper.CreateMap<Genre,GenreDto>();
 
+             Mapper.CreateMap<Rental,RentalDto>();
+
             //Dto to Domain
             Mapper.CreateMap<CustomerDto, Customer>()
                 .ForMember(c => c.ID, opt => opt.Ignore());
@@ -30,6 +32,9 @@ namespace MVC1_BookWorld.App_Start
 
             Mapper.CreateMap<GenreDto, Genre>()
                 .ForMember(c => c.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<RentalDto, Rental>()
+                .ForMember(c=>c.ID, opt =>opt.Ignore());
 
         }
     }

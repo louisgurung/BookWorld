@@ -29,6 +29,9 @@ namespace MVC1_BookWorld.Models
         [Range(1,20)]
         public int NumberInStock { get; set; }
         //movies/random
+
+        
+        public byte NumberAvailable { get; set; }
     }
 }
 

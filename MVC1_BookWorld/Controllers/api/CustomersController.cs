@@ -65,7 +65,7 @@ namespace MVC1_BookWorld.Controllers.api
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
-            customerDto.ID= customer.ID;
+            customerDto.ID= customer.ID;        //why this line?
 
             //return customerDto;    
             return Created(new Uri(Request.RequestUri + "/" + customer.ID.ToString()), customerDto);
@@ -103,8 +103,8 @@ namespace MVC1_BookWorld.Controllers.api
         [HttpDelete]
         public void DeleteCustomer(int id)
         {
-            if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            //if (!ModelState.IsValid)         ??
+            //    throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             var customerInDb = _context.Customers.SingleOrDefault(c => c.ID == id);
 

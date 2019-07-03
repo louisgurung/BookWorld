@@ -264,3 +264,7 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\G
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.Mvc5.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.Ado.dll
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Glimpse.EF6.dll
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedNewDomainForRental.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedDbSetInIdentityModel.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedMissedPrimaryKeyInDto.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedNumberAvailable.resources

@@ -230,14 +230,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\BooksController.cs" />
     <Compile Include="Controllers\api\CustomersController.cs" />
+    <Compile Include="Controllers\api\RentalController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RentalController.cs" />
     <Compile Include="Dtos\BookDto.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
+    <Compile Include="Dtos\RentalDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -274,6 +277,22 @@
     <Compile Include="Migrations\201906241951467_addedPhoneNumber.Designer.cs">
       <DependentUpon>201906241951467_addedPhoneNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907011928098_addedNewDomainForRental.cs" />
+    <Compile Include="Migrations\201907011928098_addedNewDomainForRental.Designer.cs">
+      <DependentUpon>201907011928098_addedNewDomainForRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907011956581_addedDbSetInIdentityModel.cs" />
+    <Compile Include="Migrations\201907011956581_addedDbSetInIdentityModel.Designer.cs">
+      <DependentUpon>201907011956581_addedDbSetInIdentityModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907021454495_addedMissedPrimaryKeyInDto.cs" />
+    <Compile Include="Migrations\201907021454495_addedMissedPrimaryKeyInDto.Designer.cs">
+      <DependentUpon>201907021454495_addedMissedPrimaryKeyInDto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907031443443_addedNumberAvailable.cs" />
+    <Compile Include="Migrations\201907031443443_addedNumberAvailable.Designer.cs">
+      <DependentUpon>201907031443443_addedNumberAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <!-- comment 
 	<Compile Include="Migrations\201902272043013_initial.cs" />
@@ -290,6 +309,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\NoOfBooksRange.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -411,10 +431,13 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -499,6 +522,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -545,6 +572,7 @@
     <Content Include="Views\Books\NewBookForm.cshtml" />
     <Content Include="Views\Books\ReadOnlyList.cshtml" />
     <Content Include="Views\Customers\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rental\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -586,6 +614,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906241951467_addedPhoneNumber.resx">
       <DependentUpon>201906241951467_addedPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907011928098_addedNewDomainForRental.resx">
+      <DependentUpon>201907011928098_addedNewDomainForRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907011956581_addedDbSetInIdentityModel.resx">
+      <DependentUpon>201907011956581_addedDbSetInIdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907021454495_addedMissedPrimaryKeyInDto.resx">
+      <DependentUpon>201907021454495_addedMissedPrimaryKeyInDto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907031443443_addedNumberAvailable.resx">
+      <DependentUpon>201907031443443_addedNumberAvailable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <!--<ItemGroup>

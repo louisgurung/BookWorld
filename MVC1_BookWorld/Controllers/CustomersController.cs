@@ -42,7 +42,7 @@ namespace MVC1_BookWorld.Controllers
 
         {     //UpdateCustomerDto instead of Customer type as arg enables only selective prop ..security issues
 
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid)            //send  back when not valid
             {
 
                 var viewModel = new CustomerFormViewModel()
@@ -56,8 +56,8 @@ namespace MVC1_BookWorld.Controllers
             }
 
             if (customer.ID == 0)            //need id, demand from view
-              _context.Customers.Add(customer);
-             else
+              _context.Customers.Add(customer);            //add customer
+             else            //edit or update
             {
                 var customerInDb = _context.Customers.Single(c => c.ID == customer.ID);   
                 //single used instead of single or default..throws exception when the customer is not found and we handle exception
@@ -101,19 +101,19 @@ namespace MVC1_BookWorld.Controllers
 
             //return View(customers);
 
-             //var customers = _context.Customers.ToList();
-             //if (User.IsInRole(RoleNames.CanManageCustomers))
-             //  return View("AdminList");
-             //  return View("ReadOnlyList");
+             var customers = _context.Customers.ToList();
+             if (User.IsInRole(RoleNames.CanManageCustomers))
+              return View("AdminList");
+             return View("ReadOnlyList");
 
-             if (MemoryCache.Default["Genres"] == null)
-             {
-                 MemoryCache.Default["Genres"] = _context.Genre.ToList();
-             }
+             //if (MemoryCache.Default["Genres"] == null)
+             //{
+             //    MemoryCache.Default["Genres"] = _context.Genre.ToList();
+             //}
 
-             var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+             //var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
 
-             return View();
+             //return View();
 
         }
 
