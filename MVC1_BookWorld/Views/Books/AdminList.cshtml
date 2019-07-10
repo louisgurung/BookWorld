@@ -6,71 +6,72 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1>Books</h1>
 
-<input type="button" class="btn btn-primary" value="New Book" onclick="location.href = '@Url.Action("New","Books")'"/>
+<input type="button" class="btn btn-primary" value="New Book" onclick="location.href = '@Url.Action("New","Books")'" />
 
 <table id="books" class="table table-bordered table-hover">
     <thead>
-    <tr>
+        <tr>
 
-        <th>
-            <h3>Books</h3>
-        </th>
+            <th>
+                <h3>Books</h3>
+            </th>
 
-        <th>
-           Genre
-        </th>
-        
-        <th>Delete</th>
-    </tr>
+            <th>
+                Genre
+            </th>
+
+            <th>Delete</th>
+        </tr>
     </thead>
 
     <tbody>
-    @*@foreach (var item in Model)
-    {
+        @*@foreach (var item in Model)
+            {
 
-        <tr>
-            <td>
-               Html.ActionLink(item.Name, "Details",  new {id = item.ID})
-               @Html.ActionLink(item.Name, "Edit", new { id = item.ID })         @*goes to edit page
-       
-             </td>
-            <td>
-                @item.Genre.Name
-            </td>
-        </tr>
-    }*@
+                <tr>
+                    <td>
+                       Html.ActionLink(item.Name, "Details",  new {id = item.ID})
+                       @Html.ActionLink(item.Name, "Edit", new { id = item.ID })         @*goes to edit page
+
+                     </td>
+                    <td>
+                        @item.Genre.Name
+                    </td>
+                </tr>
+            }*@
     </tbody>
 </table>
 
 @section scripts{
     <script>
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             var table = $("#books").DataTable({
                 ajax: {
                     url: "/api/books",
                     dataSrc: ""
                 },
                 columns:
-                [
-                    {
-                        data: "name",
-                        render: function(data, type, book) {
-                            return "<a href ='/books/edit/" + book.id + "'>" + book.name + "</a>";
+                    [
+                        {
+                            data: "name",
+                            render: function (data, type, book) {
+                                return "<a href ='/books/edit/" + book.id + "'>" + book.name + "</a>";
 
+                            }
+                        },
+                        {
+                            data: "genre.name"
+                        },
+                        {
+                            data: "id",
+                            render: function (data) {
+                                return "<button class = 'btn-link js-delete' data-book-id=" + data + ">Delete</button";
+                            }
                         }
-                    },
-                    {
-                        data: "genre.name"
-                    },
-                    {
-                        data: "id",
-                        render: function(data) {
-                            return "<button class = 'btn-link js-delete' data-book-id=" + data + ">Delete</button";
-                        }
-                    }
-                ]
+                    ]
 
             })
 
@@ -102,9 +103,9 @@
                 //}
             });
 
-    
 
-       
+
+
 
 
     </script>

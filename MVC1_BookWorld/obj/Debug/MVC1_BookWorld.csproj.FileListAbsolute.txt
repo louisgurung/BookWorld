@@ -268,3 +268,4 @@ C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\D
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedDbSetInIdentityModel.resources
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedMissedPrimaryKeyInDto.resources
 C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\obj\Debug\MVC1_BookWorld.Migrations.addedNumberAvailable.resources
+C:\Users\Louis Gurung\Desktop\MVC1_BookWorld\MVC1_BookWorld\MVC1_BookWorld\bin\Elmah.dll

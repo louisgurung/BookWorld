@@ -6,27 +6,44 @@
 
 <h2>New Rental Form</h2>
 
-<form>
+<form id="newRental">
     @*div.form-group>label+input[type='text'].form-control*@
     <div class="form-group">
         <label>Customer</label>
-        <input id ="customer" type="text" class="form-control" />
-    </div> 
-   
+        <div class="tt-container">
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" class="form-control" />
+        </div>
+    </div>
+
     <div class="form-group">
         <label>Book</label>
-        <input id ="book" type="text" class="form-control" />
+        <div class="tt-container">
+
+            <input id="book" name="book" type="text" class="form-control" />
+
+        </div>
     </div>
-    
+
+    <div class="row">
+        <div class="col-sm-3 col-md-3">
+            <ul id="books" class="list-group"></ul>
+
+        </div>
+    </div>
+
+
     <button class="btn btn-primary">Submit</button>
 
 
 
 </form>
 @section scripts{
+    @Scripts.Render("~bundles/jqueryval")
     <script>
         $(document).ready(function() {
-            var vm = {};        //empty object to store the customer when selected
+            var vm = {
+                bookIds: []
+            }; //empty object to store the customer when selected
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -52,7 +69,7 @@
                 });
 
 
-            var objStore = {};        //empty object to store the customer when selected
+            //empty object to store the customer when selected
             var books = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -74,9 +91,70 @@
                     source: books
                 }).on("typeahead:select",
                 function(e, book) {
-                    objStore.Id = book.id;
+                    $("#books").append("<li class='list-group-item'>" + book.name + "</li>");
+                    //this data binding fine but in complex use angular, react......
+                    $("#book").typeahead("val", "");
+                    vm.bookIds.push(book.id); //call back function?
                 });
-        
+            //custom validation
+            $.validator.addMethod("validCustomer",
+                function() {
+                    return vm.customerId && vm.customerId !== 0;
+                },
+                "Please select a valid customer");
+
+            $.validator.addMethod("atLeastOneBook",
+                function() {
+                    return vm.bookIds.length > 0;
+                },
+                "Please select at least one book.");
+
+            var validator = $("#newRental").validate({
+                submitHandler: function() {
+                    //  e.preventDefault();
+
+                    $.ajax({
+                            url: "/api/rental", //???
+                            method: "post",
+                            data: vm
+                        })
+                        .done(function() {
+                            console.log("done");
+                            //toastr.success("Rentals successfully recorded.");
+                            $("#customer").typeahead("val", "");
+                            $("#book").typeahead("val", "");
+                            $("#books").empty();
+                            //clears form
+
+                            vm = { bookIds: [] };
+
+                            validator.resetForm()
+
+                        })
+                        .fail(function() {
+                            toastr.error("Something unexpected happened.")
+                        });
+                    return false; //inorder to avoid form submitting normally.......when submit ajax call and returns false
+                }
+            });
+
+            //$("#newRental").submit(function(e) {
+            //    e.preventDefault();
+
+            //    $.ajax({
+            //            url: "/api/rental", //???
+            //            method: "post",
+            //            data: vm
+            //        })
+            //        .done(function() {
+            //            console.log("done");
+            //            //toastr.success("Rentals successfully recorded.");
+            //        })
+            //        .fail(function() {
+            //            toastr.error("Something unexpected happened.")
+            //        });
+            //});
+
         });
     </script>
 }

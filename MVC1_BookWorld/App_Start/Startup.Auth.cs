@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -55,14 +56,14 @@ namespace MVC1_BookWorld
             // consumerSecret: "");
 
             app.UseFacebookAuthentication(
-            appId: "2023017781137481",
-           appSecret: "042785fa9354b5e354623975f0d102d3");
+            appId: ConfigurationManager.AppSettings["FacebookAppId"],
+           appSecret: ConfigurationManager.AppSettings["FacebookAppSecret"]);
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+               ClientId = "790584312528-28a30erjknrv26f1i1h5hciu7qaq5dpt.apps.googleusercontent.com",
+               ClientSecret = "CGRlplhxRkpRMxX5f5bzED1k"
+            });
         }
     }
 }

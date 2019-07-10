@@ -23,18 +23,25 @@ namespace MVC1_BookWorld.Controllers.api
 
         //GET/api/Books
 
-        public /*IEnumerable<BookDto>*/IHttpActionResult GetBooks()
+        public /*IEnumerable<BookDto>*/IHttpActionResult GetBooks(string query=null)
 
         {
 
-           // var x = _context.Books.Include(b=> b.Genre).ToList();
+            // var x = _context.Books.Include(b=> b.Genre).ToList();
             // return _context.Books.ToList().Select(Mapper.Map<Book,BookDto>);
-           var bookDtos = _context.Books
-               .Include(c => c.Genre)
-               .ToList()
-               .Select(Mapper.Map<Book, BookDto>);
+            //var bookDtos = _context.Books
+            //    .Include(c => c.Genre)
+            //    .ToList()
+            //    .Select(Mapper.Map<Book, BookDto>);
+            var booksQuery = _context.Books.Include(c => c.Genre);
 
-           return Ok(bookDtos);
+            if (!String.IsNullOrWhiteSpace(query))
+               booksQuery = booksQuery.Where(c => c.Name.Contains(query));
+
+            var bookDtos = booksQuery.ToList().Select(Mapper.Map<Book,BookDto>);
+
+
+            return Ok(bookDtos);
         }
 
         //get by id
